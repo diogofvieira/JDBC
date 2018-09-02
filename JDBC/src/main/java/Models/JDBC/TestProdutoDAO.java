@@ -19,23 +19,23 @@ public class TestProdutoDAO {
 			
 			
 			ProdutoDAO dao= new ProdutoDAO(connection);
-			dao.save(desk);
-			List<Produto> list = dao.list();
 			
+			dao.save(desk);
+			System.out.println(desk);
+			
+			List<Produto> list = dao.list();
 			for (Produto produto : list) {
 				System.out.println(produto);
 			}
+			
+			dao.delete(desk.getId());
+			
+			connection.close();
 				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		
-		System.out.println(desk);
 
 	}
-
-	
-	
-	
 		
 }
